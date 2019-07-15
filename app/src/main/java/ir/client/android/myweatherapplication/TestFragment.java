@@ -2,9 +2,11 @@ package ir.client.android.myweatherapplication;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -16,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
+import com.orhanobut.hawk.Hawk;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
@@ -49,6 +52,7 @@ public class TestFragment extends Fragment {
 
 
         EditText edtCity = view.findViewById(R.id.edtCity);
+        Button btnOk = view.findViewById(R.id.btnOk);
 
         //final ImageView imgPic = view.findViewById(R.id.imgPic);
         final TextView txtTemp = view.findViewById(R.id.txtTemp);
@@ -70,6 +74,15 @@ public class TestFragment extends Fragment {
             Drawable myDrawable = getResources().getDrawable(R.drawable.miladpic);
             imgMiladTower.setImageDrawable(myDrawable);
         }
+
+
+        btnOk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("click log","msg");
+            }
+        });
+
 
 
         String url = "https://api.openweathermap.org/data/2.5/weather?q=Tehran&APPID=4a795a76be3c3dde65fdf55dab9f5361";

@@ -27,6 +27,7 @@ import cz.msebera.android.httpclient.Header;
 import ir.client.android.myweatherapplication.DailyWeathermodel.DailyWeatherClass;
 
 public class MainActivity extends AppCompatActivity {
+    
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,10 @@ public class MainActivity extends AppCompatActivity {
         TestPagerAdapter adapter = new TestPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
         tab.setViewPager(pager);
+
+        Hawk.init(MainActivity.this).build();
+        Object Tehran = Hawk.get("city");
+        Hawk.put("city",Tehran);
 
         final ImageView imgPic = findViewById(R.id.imgPic);
         final TextView txtTemp = findViewById(R.id.txtTemp);
