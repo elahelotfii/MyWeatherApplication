@@ -1,0 +1,10 @@
+<resources>
+    <string name="temprature">Temprature</string>
+    <string name="app_name">weather application</string>
+    <string name="weatherpic">WeatherPic</string>
+    <string name="todo">TODO</string>
+    <string name="enjoy_weather">Enjoy weather</string>
+    <string name="enter_your_city_name">Enter your city name</string>
+    <string name="wind_speed">wind speed:</string>
+    <string name="ok">Ok</string>
+</resources>

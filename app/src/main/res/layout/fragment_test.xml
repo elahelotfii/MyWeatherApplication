@@ -5,42 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#ffff99"
+    android:background="@drawable/wehgfd"
     tools:context=".MainActivity">
 
-
     <LinearLayout
-        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
         android:layout_marginLeft="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <TextView
-            android:textColor="#000000"
-            android:id="@+id/txtDescribe"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="250dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-
-        <ImageView
-            android:id="@+id/imgMiladTower"
-            android:src="@mipmap/miladpic"
-            android:layout_width="200dp"
-            android:layout_height="200dp" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginLeft="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
         <TextView
             android:textStyle="italic"
             android:textColor="#000000"
@@ -49,30 +22,24 @@
             android:layout_height="wrap_content"
             android:textSize="30sp"/>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginLeft="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-
         <TextView
+            android:layout_marginLeft="35dp"
             android:textColor="#000000"
             android:id="@+id/txtTemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="50sp"/>
+            android:textSize="30sp"/>
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="30dp"
         android:layout_marginLeft="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <ImageView
             android:src="@mipmap/weathericonwind"
-            android:layout_width="50dp"
+            android:layout_width="40dp"
             android:layout_height="40dp" />
 
         <TextView
@@ -88,13 +55,14 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="0dp"
         android:layout_marginLeft="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <ImageView
             android:src="@mipmap/weathericonpressure"
-            android:layout_width="50dp"
+            android:layout_width="40dp"
             android:layout_height="40dp" />
         <TextView
             android:layout_marginLeft="5dp"
@@ -108,13 +76,14 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="0dp"
         android:layout_marginLeft="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <ImageView
             android:src="@mipmap/weathericonhumidity"
-            android:layout_width="50dp"
+            android:layout_width="40dp"
             android:layout_height="40dp" />
         <TextView
             android:layout_marginLeft="5dp"
@@ -128,13 +97,14 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="0dp"
         android:layout_marginLeft="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <ImageView
             android:src="@mipmap/weathericonsunrise"
-            android:layout_width="50dp"
+            android:layout_width="40dp"
             android:layout_height="40dp" />
         <TextView
             android:layout_marginLeft="5dp"
@@ -148,13 +118,14 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="0dp"
         android:layout_marginLeft="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
         <ImageView
             android:src="@mipmap/weathericonsunset2"
-            android:layout_width="50dp"
+            android:layout_width="40dp"
             android:layout_height="40dp" />
         <TextView
             android:layout_marginLeft="5dp"
@@ -168,6 +139,35 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="0dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:background="@android:color/transparent"
+            android:id="@+id/edtCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_your_city_name"
+            android:textColor="#000000"
+            android:hint="Tehran"
+            android:textColorHint="#c2c2a3"/>
+
+        <Button
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:id="@+id/btnOk"
+            android:text="@string/ok"
+            android:textSize="10sp"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:textColor="#000000"
+            android:background="@drawable/wehgfd"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="0dp"
         android:layout_marginLeft="30dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
@@ -196,31 +196,6 @@
             android:layout_height="wrap_content"
             android:textSize="15sp"/>
     </LinearLayout>
-
-    <RelativeLayout
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:background="@android:color/transparent"
-            android:id="@+id/edtCity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/enter_your_city_name"
-            android:textColor="#000000"
-            android:hint="Tehran"
-            android:textColorHint="#c2c2a3"/>
-
-        <Button
-            android:layout_marginLeft="45dp"
-            android:layout_marginTop="20dp"
-            android:id="@+id/btnOk"
-            android:text="@string/ok"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
 
 
 </LinearLayout>

@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"
-                  android:theme="@style/Theme.AppCompat.NoActionBar">
+                  android:theme="@style/Theme.AppCompat.NoActionBar"
+                  android:configChanges="orientation"
+                  android:screenOrientation="sensor">
         </activity>
         <activity android:name=".SplashScreenActivity"
                   android:theme="@style/Theme.AppCompat.NoActionBar">

@@ -1,14 +1,12 @@
 package ir.client.android.myweatherapplication;
 
-import android.graphics.drawable.Drawable;
+import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -19,24 +17,25 @@ import com.google.gson.Gson;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.orhanobut.hawk.Hawk;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.jar.Attributes;
 
 import cz.msebera.android.httpclient.Header;
 import ir.client.android.myweatherapplication.DailyWeathermodel.DailyWeatherClass;
 
-import static ir.client.android.myweatherapplication.R.id.imgMiladTower;
+//import static ir.client.android.myweatherapplication.R.id.imgMiladTower;
 
 public class TestFragment extends Fragment {
 
+    private String city = "";
+    //private ArrayList<City> userCities;
 
-    private Object Tehran;
+
+
     private java.lang.Object Object;
 
     @Nullable
@@ -50,13 +49,22 @@ public class TestFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        Hawk.init( getContext() ).build();
+        
 
-        EditText edtCity = view.findViewById(R.id.edtCity);
+
+
+        Hawk.put("city", city);
+        city = Hawk.get("city");
+
+
+
+        final EditText edtCity = view.findViewById(R.id.edtCity);
         Button btnOk = view.findViewById(R.id.btnOk);
 
         //final ImageView imgPic = view.findViewById(R.id.imgPic);
         final TextView txtTemp = view.findViewById(R.id.txtTemp);
-        final TextView txtDescribe = view.findViewById(R.id.txtDescribe);
+        //final TextView txtDescribe = view.findViewById(R.id.txtDescribe);
         final TextView txtName = view.findViewById(R.id.txtName);
         final TextView txtSpeed = view.findViewById(R.id.txtSpeed);
         final TextView txtPressure = view.findViewById(R.id.txtPressure);
@@ -65,21 +73,30 @@ public class TestFragment extends Fragment {
         final TextView txtTempMin = view.findViewById(R.id.txtTempMin);
         final TextView txtTempMax = view.findViewById(R.id.txtTempMax);
         final TextView txtHumidity = view.findViewById(R.id.txtHumidity);
-        ImageView imgMiladTower = view.findViewById(R.id.imgMiladTower);
+        //ImageView imgMiladTower = view.findViewById(R.id.imgMiladTower);
 
 
-        String Name;
+        /*String Name;
         Name = "Tehran";
         if(Name==Tehran) {
             Drawable myDrawable = getResources().getDrawable(R.drawable.miladpic);
             imgMiladTower.setImageDrawable(myDrawable);
-        }
+        }*/
 
 
         btnOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("click log","msg");
+                edtCity.getText();
+
+                city = Hawk.get("city");
+                Hawk.put("city",city);
+
+                //userCities = (Hawk.contains("UserCities")) ? userCities = Hawk.get("UserCities") : new ArrayList<City>();
+                //City userCity = new City(txtName.getText().toString());
+                //userCities.add(userCity);
+                //Hawk.put("UserCities", userCities);
+                //finish();
             }
         });
 

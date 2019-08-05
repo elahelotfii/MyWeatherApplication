@@ -21,11 +21,11 @@ public class SplashScreenActivity extends AppCompatActivity {
         splashSound = MediaPlayer.create(this,R.raw.stbassdrumloop);
         splashSound.start();
 
-        GifView gifView1 = (GifView) findViewById(R.id.gif1);
-        gifView1.setVisibility(View.VISIBLE);
-        gifView1.play();
-        gifView1.setGifResource(R.mipmap.weathertest4);
-        gifView1.getGifResource();
+        //GifView gifView1 = (GifView) findViewById(R.id.gif1);
+        //gifView1.setVisibility(View.VISIBLE);
+        //gifView1.play();
+        //gifView1.setGifResource(R.mipmap.weathertest4);
+        //gifView1.getGifResource();
 
         new Handler().postDelayed(new Runnable() {
             @Override

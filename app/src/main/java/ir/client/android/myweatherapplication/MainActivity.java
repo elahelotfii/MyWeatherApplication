@@ -27,12 +27,13 @@ import cz.msebera.android.httpclient.Header;
 import ir.client.android.myweatherapplication.DailyWeathermodel.DailyWeatherClass;
 
 public class MainActivity extends AppCompatActivity {
-    
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         ViewPager pager = findViewById(R.id.pager);
         SmartTabLayout tab = findViewById(R.id.tab);
@@ -42,12 +43,11 @@ public class MainActivity extends AppCompatActivity {
         tab.setViewPager(pager);
 
         Hawk.init(MainActivity.this).build();
-        Object Tehran = Hawk.get("city");
-        Hawk.put("city",Tehran);
 
-        final ImageView imgPic = findViewById(R.id.imgPic);
+
+        //final ImageView imgPic = findViewById(R.id.imgPic);
         final TextView txtTemp = findViewById(R.id.txtTemp);
-        final TextView txtDescribe = findViewById(R.id.txtDescribe);
+        //final TextView txtDescribe = findViewById(R.id.txtDescribe);
         final TextView txtName = findViewById(R.id.txtName);
         final TextView txtSpeed = findViewById(R.id.txtSpeed);
         final TextView txtPressure = findViewById(R.id.txtPressure);
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             public void onStart() {
 
 
-                Picasso.with(MainActivity.this).load("https://www.google.com/imgres?imgurl=https%3A%2F%2Fftpcontent.worldnow.com%2Fgriffin%2FbaronIcons%2Fday%2Fpartlycloudy.svg&imgrefurl=http%3A%2F%2Fwww.news9.com%2Fweather&docid=NIGELagQXD1FgM&tbnid=xcdKw0JAaEOkBM%3A&vet=10ahUKEwiwtI7b46fjAhXwB50JHX7IDswQMwhNKAwwDA..i&w=800&h=643&bih=754&biw=1536&q=weather%20image&ved=0ahUKEwiwtI7b46fjAhXwB50JHX7IDswQMwhNKAwwDA&iact=mrc&uact=8").into(imgPic);
+                //Picasso.with(MainActivity.this).load("https://www.google.com/imgres?imgurl=https%3A%2F%2Fftpcontent.worldnow.com%2Fgriffin%2FbaronIcons%2Fday%2Fpartlycloudy.svg&imgrefurl=http%3A%2F%2Fwww.news9.com%2Fweather&docid=NIGELagQXD1FgM&tbnid=xcdKw0JAaEOkBM%3A&vet=10ahUKEwiwtI7b46fjAhXwB50JHX7IDswQMwhNKAwwDA..i&w=800&h=643&bih=754&biw=1536&q=weather%20image&ved=0ahUKEwiwtI7b46fjAhXwB50JHX7IDswQMwhNKAwwDA&iact=mrc&uact=8").into(imgPic);
 
                 super.onStart();
 
