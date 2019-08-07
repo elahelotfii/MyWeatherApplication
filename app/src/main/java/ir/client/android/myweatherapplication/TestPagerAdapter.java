@@ -17,6 +17,8 @@ public class TestPagerAdapter extends FragmentPagerAdapter {
                 return new TestFragment();
             case 1:
                 return new FragmentRecycle();
+            case 2:
+                return new UpdateFragment();
                 default:
                     return new TestFragment();
         }
@@ -24,7 +26,7 @@ public class TestPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 
     @Nullable
@@ -32,9 +34,11 @@ public class TestPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         switch (position){
             case 0:
-                return "Daily weather forecast";
+                return "City name";
             case 1:
-                return "future weather forecast";
+                return "Daily weather forecast";
+            case 2:
+                return "Future weather forecast";
                 default:
                     return "Unkown page";
         }

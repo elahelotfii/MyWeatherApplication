@@ -9,140 +9,24 @@
     tools:context=".MainActivity">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
-            android:textStyle="italic"
-            android:textColor="#000000"
-            android:id="@+id/txtName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"/>
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
 
-        <TextView
-            android:layout_marginLeft="35dp"
-            android:textColor="#000000"
-            android:id="@+id/txtTemp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:src="@mipmap/weathericonwind"
-            android:layout_width="40dp"
-            android:layout_height="40dp" />
-
-        <TextView
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:id="@+id/txtSpeed"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"/>
+        <VideoView
+            android:id="@+id/vv"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:src="@mipmap/weathericonpressure"
-            android:layout_width="40dp"
-            android:layout_height="40dp" />
-        <TextView
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:id="@+id/txtPressure"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"/>
-    </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:src="@mipmap/weathericonhumidity"
-            android:layout_width="40dp"
-            android:layout_height="40dp" />
-        <TextView
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:id="@+id/txtHumidity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:src="@mipmap/weathericonsunrise"
-            android:layout_width="40dp"
-            android:layout_height="40dp" />
-        <TextView
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:id="@+id/txtSunrise"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:src="@mipmap/weathericonsunset2"
-            android:layout_width="40dp"
-            android:layout_height="40dp" />
-        <TextView
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:id="@+id/txtSunset"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="300dp"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
+
+
 
         <EditText
             android:background="@android:color/transparent"
@@ -150,52 +34,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/enter_your_city_name"
+            android:textSize="30sp"
             android:textColor="#000000"
             android:hint="Tehran"
             android:textColorHint="#c2c2a3"/>
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
         <Button
+            android:id="@+id/btnOk"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="0dp"
             android:layout_marginTop="0dp"
-            android:id="@+id/btnOk"
+            android:background="@drawable/wehgfd"
             android:text="@string/ok"
-            android:textSize="10sp"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
             android:textColor="#000000"
-            android:background="@drawable/wehgfd"/>
+            android:textSize="20sp"/>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_marginTop="0dp"
-        android:layout_marginLeft="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:id="@+id/txtTempMin"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"/>
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_marginLeft="30dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-        <TextView
-            android:layout_marginLeft="5dp"
-            android:layout_marginTop="5dp"
-            android:textStyle="bold"
-            android:textColor="#000000"
-            android:id="@+id/txtTempMax"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="15sp"/>
-    </LinearLayout>
-
-
-</LinearLayout>

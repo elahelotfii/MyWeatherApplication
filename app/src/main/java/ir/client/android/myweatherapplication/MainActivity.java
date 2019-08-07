@@ -1,10 +1,16 @@
 package ir.client.android.myweatherapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -28,15 +34,25 @@ import ir.client.android.myweatherapplication.DailyWeathermodel.DailyWeatherClas
 
 public class MainActivity extends AppCompatActivity {
 
+    //private static FragmentManager fragmentManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //fragmentManager = getSupportFragmentManager();
+
+
+        //send data from activity to fragment
+        /*Bundle bundle = new Bundle(  );
+        bundle.putString( "city", "city" );
+        FragmentRecycle fragobj = new FragmentRecycle();
+        fragobj.setArguments(bundle);*/
 
         ViewPager pager = findViewById(R.id.pager);
         SmartTabLayout tab = findViewById(R.id.tab);
+
 
         TestPagerAdapter adapter = new TestPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(adapter);
@@ -56,6 +72,12 @@ public class MainActivity extends AppCompatActivity {
         final TextView txtTempMin = findViewById(R.id.txtTempMin);
         final TextView txtTempMax = findViewById(R.id.txtTempMax);
         final TextView txtHumidity = findViewById(R.id.txtHumidity);
+        final TextView txtDescription = findViewById( R.id.txtDescription );
+
+        final EditText edtCity = findViewById(R.id.edtCity);
+        Button btnOk = findViewById(R.id.btnOk);
+
+        final TextView txtDate = findViewById( R.id.txtDate );
 
         String url = "https://api.openweathermap.org/data/2.5/weather?q=Tehran&APPID=4a795a76be3c3dde65fdf55dab9f5361";
         AsyncHttpClient client = new AsyncHttpClient();
@@ -79,7 +101,24 @@ public class MainActivity extends AppCompatActivity {
                 DailyWeatherClass weather = gson.fromJson(response.toString(),DailyWeatherClass.class);
 
 
-                txtName.setText(weather.getName());
+                /*TextView a = txtName;
+                String b = weather.getName();
+                Editable c = edtCity.getText();
+                Intent intent = getIntent();
+                String d = getIntent().getStringExtra("city");
+                txtName.setText( 'd' );*/
+
+
+
+                /*SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                String currentDateandTime = sdf.format(new Date());
+
+                txtDate.setText(weather.getDt());*/
+
+                //txtName.setText(weather.getName());
+
+
+                //String s = intent.getStringExtra("city");
 
                 DecimalFormat tempFormat = new DecimalFormat(".#");
                 String temperature = tempFormat.format(weather.getMain().getTemp() - 273.15D);
@@ -122,4 +161,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    /*@Override
+    public void onClick(View view){
+        switch (view.getId()){
+            case R.id.setFragmentRecycle:
+                fragmentManager.beginTransaction().replace( R.id.fragmentContainer, new FragmentRecycle()).commit();
+                break;
+            case R.id.setArgumentFragment:
+        }
+    }*/
 }
