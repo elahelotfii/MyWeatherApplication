@@ -29,10 +29,13 @@ import org.json.JSONObject;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
 import ir.client.android.myweatherapplication.DailyWeathermodel.DailyWeatherClass;
+import ir.client.android.myweatherapplication.UpdateWeathermodel.UpdateWeatherClass;
 
 //import static ir.client.android.myweatherapplication.R.id.imgMiladTower;
 
@@ -59,6 +62,11 @@ public class FragmentRecycle extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        final List<String> List = new ArrayList<>(  );
+        List.add( "Elahe" );
+
+
 
 
 
@@ -96,11 +104,36 @@ public class FragmentRecycle extends Fragment {
         final TextView txtHumidity = view.findViewById(R.id.txtHumidity);
         final TextView txtDescription = view.findViewById( R.id.txtDescription );
 
-        RecyclerView recycler = view.findViewById( R.id.recycler );
+        final RecyclerView recycler = view.findViewById( R.id.recycler );
+        RecyclerView recycler2 = view.findViewById( R.id.recycler2 );
+        RecyclerView recycler3 = view.findViewById( R.id.recycler3 );
+        RecyclerView recycler4 = view.findViewById( R.id.recycler4 );
+        RecyclerView recycler5 = view.findViewById( R.id.recycler5 );
 
-        TestAdapter adapter = new TestAdapter();
+
+        //final TextView txtDt = view.findViewById( R.id.txtDt );
+
+
+        /*TestAdapter adapter = new TestAdapter(List);
         recycler.setAdapter( adapter );
-        recycler.setLayoutManager( new LinearLayoutManager( getContext(),RecyclerView.HORIZONTAL,false ) );
+        recycler.setLayoutManager( new LinearLayoutManager( getContext(),RecyclerView.VERTICAL,false ) );*/
+
+        TestAdapter2 adapter2 = new TestAdapter2();
+        recycler2.setAdapter( adapter2 );
+        recycler2.setLayoutManager( new LinearLayoutManager( getContext(),RecyclerView.VERTICAL,false ) );
+
+        TestAdapter3 adapter3 = new TestAdapter3();
+        recycler3.setAdapter( adapter3 );
+        recycler3.setLayoutManager( new LinearLayoutManager( getContext(),RecyclerView.VERTICAL,false ) );
+
+        TestAdapter4 adapter4 = new TestAdapter4();
+        recycler4.setAdapter( adapter4 );
+        recycler4.setLayoutManager( new LinearLayoutManager( getContext(),RecyclerView.VERTICAL,false ) );
+
+        TestAdapter5 adapter5 = new TestAdapter5();
+        recycler5.setAdapter( adapter5 );
+        recycler5.setLayoutManager( new LinearLayoutManager( getContext(),RecyclerView.VERTICAL,false ) );
+
 
         GifView gifcloud = view.findViewById( R.id.gifcloud );
 
@@ -165,6 +198,8 @@ public class FragmentRecycle extends Fragment {
                 String formattedSunset = sunsetFormat.format( new Date( weather.getSys().getSunset() * 1000L ) );
                 txtSunset.setText( formattedSunset );
 
+
+
                 super.onSuccess( statusCode, headers, response );
             }
 
@@ -173,5 +208,34 @@ public class FragmentRecycle extends Fragment {
                 super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
+
+
+        String url2 = "http://api.openweathermap.org/data/2.5/forecast?q=Tehran&APPID=4a795a76be3c3dde65fdf55dab9f5361";
+        AsyncHttpClient client1 = new AsyncHttpClient(  );
+        client1.get(url2, new JsonHttpResponseHandler(  ) {
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+
+                Gson gson = new Gson();
+                //UpdateWeatherClass weather1 = gson.fromJson( response.toString(), UpdateWeatherClass.class );
+
+
+                //TestAdapter adapter = new TestAdapter(weather1.getList());
+                //recycler.setAdapter( adapter );
+                recycler.setLayoutManager( new LinearLayoutManager( getContext(),RecyclerView.VERTICAL,false ) );
+
+
+
+
+
+                super.onSuccess( statusCode, headers, response );
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+            });
     }
 }

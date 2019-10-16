@@ -6,13 +6,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#000000"
+    android:background="#ff0000"
     tools:ignore="NamespaceTypo">
 
     <TextView
-        android:id="@+id/txtitem"
+        android:id="@+id/txtitem3"
         android:layout_width="match_parent"
         android:layout_height="80dp" />
-
 
 </LinearLayout>

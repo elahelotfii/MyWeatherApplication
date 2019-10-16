@@ -108,7 +108,7 @@ public class TestFragment extends Fragment {
                 Intent intent = new Intent(getContext(),MainActivity.class );
                 intent.putExtra( "city","Tehran" );
                 //edtCity.getText();
-                startActivity(intent);
+                getContext().startActivity(intent);
 
                 if (Hawk.contains( "enterYourCityName" )){
                     enterYourCityName = Hawk.get( "enterYourCityName" );
